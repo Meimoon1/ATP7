@@ -53,8 +53,15 @@ public class ATP7 {
                 break;
             case 3:
                 System.out.println("---------------Cálculo de Números Primos----------------");
-                System.out.println("Informe um número: ");
-                int numero3 = sc.nextInt();
+
+                int numero3 = 0;
+                do {
+                    System.out.println("Informe um número: ");
+                    numero3 = sc.nextInt();
+                    if(numero3 < 0){
+                        System.out.print("O número deve ser positivo! ");
+                    }
+                }while(numero3 < 0);
 
                 for (int i = 0; i <= numero3; i++) {
                     //inicia validacao do numero primo
