@@ -12,14 +12,16 @@ public class ATP7 {
             case 1:
                 System.out.println("--------------Cálculo de Números Pares-----------");
 
-                int numero = 0;
+                int numeroPar = 0;
                 do {
                     System.out.println("Informe um número: ");
-                    numero = sc.nextInt();
+                    numeroPar = sc.nextInt();
 
-                } while(!validaNumero(numero));
+                } while(!validaNumero(numeroPar));
 
-                for (int i = 0; i <= numero; i++) {
+                System.out.println("Os números pares são: ");
+
+                for (int i = 0; i <= numeroPar; i++) {
                     if (i % 2 == 0) {
                         System.out.println(i);
                     }
@@ -28,15 +30,16 @@ public class ATP7 {
             case 2:
                 System.out.println("---------------Cálculo de Números Ìmpares----------------");
 
-                int numero2 = 0;
+                int numeroImpar = 0;
                 do {
                     System.out.println("Informe um número: ");
-                    numero2 = sc.nextInt();
+                    numeroImpar = sc.nextInt();
 
-                }while(!validaNumero(numero2));
+                }while(!validaNumero(numeroImpar));
 
-                for (int i = 0; i <= numero2; i++) {
+                System.out.println("Os números ímpares são: ");
 
+                for (int i = 0; i <= numeroImpar; i++) {
                     if (i % 2 != 0) {
                         System.out.println(i);
                     }
@@ -45,14 +48,16 @@ public class ATP7 {
             case 3:
                 System.out.println("---------------Cálculo de Números Primos----------------");
 
-                int numero3 = 0;
+                int numeroPrimo = 0;
                 do {
                     System.out.println("Informe um número: ");
-                    numero3 = sc.nextInt();
+                    numeroPrimo = sc.nextInt();
 
-                }while(!validaNumero(numero3));
+                }while(!validaNumero(numeroPrimo));
 
-                for (int i = 0; i <= numero3; i++) {
+                System.out.println("Os números primos são: ");
+
+                for (int i = 0; i <= numeroPrimo; i++) {
                     //inicia validacao do numero primo
                     boolean valido = true;
                     while (valido) {
@@ -114,6 +119,8 @@ public class ATP7 {
                 }while(!validaNumero(prazo));
 
                 double montante = investimento;
+
+                System.out.printf("\tO investimento inicial é: %.2f \n", investimento);
 
                 for (int i = 1; i <= prazo ; i++) {
                     montante += montante*juros;
