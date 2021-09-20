@@ -11,8 +11,18 @@ public class ATP7 {
         switch (opcao) {
             case 1:
                 System.out.println("--------------Cálculo de Números Pares-----------");
-                System.out.println("Informe um número: ");
-                int numero = sc.nextInt();
+
+                int numero = 0;
+                do {
+                    System.out.println("Informe um número: ");
+                    numero = sc.nextInt();
+
+                    if(numero < 0) {
+                        System.out.println("O número deve ser positivo! ");
+                    }
+
+                } while(numero < 0 );
+
                 for (int i = 0; i <= numero; i++) {
 
                     if (i % 2 == 0) {
@@ -22,8 +32,18 @@ public class ATP7 {
                 break;
             case 2:
                 System.out.println("---------------Cálculo de Números Ìmpares----------------");
-                System.out.println("Informe um número: ");
-                int numero2 = sc.nextInt();
+
+                int numero2 = 0;
+                do {
+                    System.out.println("Informe um número: ");
+                    numero2 = sc.nextInt();
+
+                    if(numero2 < 0) {
+                        System.out.println("O número deve ser positivo! ");
+                    }
+
+                }while(numero2 < 0 );
+
                 for (int i = 0; i <= numero2; i++) {
 
                     if (i % 2 != 0) {
@@ -32,7 +52,7 @@ public class ATP7 {
                 }
                 break;
             case 3:
-                System.out.println("---------------Cálculo de Números Ìmpares----------------");
+                System.out.println("---------------Cálculo de Números Primos----------------");
                 System.out.println("Informe um número: ");
                 int numero3 = sc.nextInt();
 
@@ -71,6 +91,28 @@ public class ATP7 {
                     }
                 }
                 break;
+            case 4:
+                System.out.println("---------------Cálculo de Retorno de Investimento ----------------");
+                System.out.println("Informe o investimento: ");
+                double investimento = sc.nextDouble();
+                sc.nextLine();
+                System.out.println("Informe a taxa de juros: ");
+                double juros = sc.nextDouble();
+                sc.nextLine();
+                System.out.println("Informe o prazo : ");
+                int prazo = sc.nextInt();
+                sc.nextLine();
+
+                double montante = investimento;
+
+                for (int i = 1; i <= prazo ; i++) {
+                    montante += montante*juros;
+                    System.out.printf("\tO retorno do %dº mês é de %.2f \n", i, montante);
+                }
+
+                System.out.printf("\n\tO retorno total é %.2f ", montante);
+            case 5:
+                System.out.println("\n\n\t---------------Saindo do menu! ----------------");
         }
     }
 }
