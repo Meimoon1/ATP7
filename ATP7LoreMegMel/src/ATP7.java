@@ -59,7 +59,7 @@ public class ATP7 {
                     System.out.println("Informe um número: ");
                     numero3 = sc.nextInt();
                     if(numero3 < 0){
-                        System.out.print("O número deve ser positivo! ");
+                        System.out.println("O número deve ser positivo! ");
                     }
                 }while(numero3 < 0);
 
@@ -100,15 +100,36 @@ public class ATP7 {
                 break;
             case 4:
                 System.out.println("---------------Cálculo de Retorno de Investimento ----------------");
-                System.out.println("Informe o investimento: ");
-                double investimento = sc.nextDouble();
-                sc.nextLine();
-                System.out.println("Informe a taxa de juros: ");
-                double juros = sc.nextDouble();
-                sc.nextLine();
-                System.out.println("Informe o prazo : ");
-                int prazo = sc.nextInt();
-                sc.nextLine();
+                double investimento =0.0;
+                do {
+                    System.out.println("Informe o investimento: ");
+                    investimento = sc.nextDouble();
+                    sc.nextLine();
+                    if (investimento<0){
+                        System.out.println("O investimento deve ser maior que R$0,00");
+                    }
+                } while(investimento<0);
+
+                double juros =0.0;
+                do {
+                    System.out.println("Informe a taxa de juros: ");
+                    juros = sc.nextDouble();
+                    sc.nextLine();
+                    if (juros<0){
+                        System.out.println("O juros informado deve ser maior que 0");
+                    }
+                } while(juros<0);
+
+                int prazo =0;
+                do {
+                    System.out.println("Informe o prazo : ");
+                    prazo = sc.nextInt();
+                    sc.nextLine();
+
+                    if (prazo<0){
+                        System.out.println("O prazo informado deve ser maior que 0");
+                    }
+                }while(prazo<0);
 
                 double montante = investimento;
 
@@ -118,8 +139,13 @@ public class ATP7 {
                 }
 
                 System.out.printf("\n\tO retorno total é %.2f ", montante);
+                break;
             case 5:
                 System.out.println("\n\n\t---------------Saindo do menu! ----------------");
+                break;
+            default:
+                System.out.println("Opcao invalida");
+                break;
         }
     }
 }
