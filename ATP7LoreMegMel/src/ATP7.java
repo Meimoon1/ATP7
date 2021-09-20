@@ -17,14 +17,9 @@ public class ATP7 {
                     System.out.println("Informe um número: ");
                     numero = sc.nextInt();
 
-                    if(numero < 0) {
-                        System.out.println("O número deve ser positivo! ");
-                    }
-
-                } while(numero < 0 );
+                } while(!validaNumero(numero));
 
                 for (int i = 0; i <= numero; i++) {
-
                     if (i % 2 == 0) {
                         System.out.println(i);
                     }
@@ -38,11 +33,7 @@ public class ATP7 {
                     System.out.println("Informe um número: ");
                     numero2 = sc.nextInt();
 
-                    if(numero2 < 0) {
-                        System.out.println("O número deve ser positivo! ");
-                    }
-
-                }while(numero2 < 0 );
+                }while(!validaNumero(numero2));
 
                 for (int i = 0; i <= numero2; i++) {
 
@@ -58,10 +49,8 @@ public class ATP7 {
                 do {
                     System.out.println("Informe um número: ");
                     numero3 = sc.nextInt();
-                    if(numero3 < 0){
-                        System.out.println("O número deve ser positivo! ");
-                    }
-                }while(numero3 < 0);
+
+                }while(!validaNumero(numero3));
 
                 for (int i = 0; i <= numero3; i++) {
                     //inicia validacao do numero primo
@@ -105,20 +94,16 @@ public class ATP7 {
                     System.out.println("Informe o investimento: ");
                     investimento = sc.nextDouble();
                     sc.nextLine();
-                    if (investimento<0){
-                        System.out.println("O investimento deve ser maior que R$0,00");
-                    }
-                } while(investimento<0);
+
+                } while(!validaNumero(investimento));
 
                 double juros =0.0;
                 do {
                     System.out.println("Informe a taxa de juros: ");
                     juros = sc.nextDouble();
                     sc.nextLine();
-                    if (juros<0){
-                        System.out.println("O juros informado deve ser maior que 0");
-                    }
-                } while(juros<0);
+
+                } while(!validaNumero(juros));
 
                 int prazo =0;
                 do {
@@ -126,10 +111,7 @@ public class ATP7 {
                     prazo = sc.nextInt();
                     sc.nextLine();
 
-                    if (prazo<0){
-                        System.out.println("O prazo informado deve ser maior que 0");
-                    }
-                }while(prazo<0);
+                }while(!validaNumero(prazo));
 
                 double montante = investimento;
 
@@ -147,5 +129,31 @@ public class ATP7 {
                 System.out.println("Opcao invalida");
                 break;
         }
+    }
+
+    //função que verifica se um número do int é positivo
+    public static boolean validaNumero(int numero) {
+        boolean valida = true;
+
+        if (numero < 0) {
+            System.out.println("O valor deve ser positivo!");
+            valida = false;
+        } else {
+            valida = true;
+        }
+        return valida;
+    }
+
+    //função que verifica se um número do double é positivo
+    public static boolean validaNumero(double numero) {
+        boolean valida = true;
+
+        if (numero < 0) {
+            System.out.println("O valor deve ser positivo!");
+            valida = false;
+        } else {
+            valida = true;
+        }
+        return valida;
     }
 }
